@@ -17,34 +17,26 @@ public class CarExam {
 		cars.add(new Car("중간차", 5, 2200, 0));
 		cars.add(new Car("비싼차", 5, 3500, 1));
 
-		printCheeperThan(cars, 10000);
-		System.out.println("--------------------");
-
-		printCar(cars, new CheckCarForBigAndNotExpensive());
-		System.out.println("--------------------");
-
-		printCar(cars, new CheckCar() {
-			@Override
-			public boolean test(Car car) {
-				return car.capacity >= 4 && car.price < 2500;
-			}
-		});
-		System.out.println("--------------------");
+		// printCheeperThan(cars, 10000);
+		// System.out.println("--------------------");
+		//
+		// printCar(cars, new CheckCarForBigAndNotExpensive());
+		// System.out.println("--------------------");
+		//
+		// printCar(cars, new CheckCar() {
+		// @Override
+		// public boolean test(Car car) {
+		// return car.capacity >= 4 && car.price < 2500;
+		// }
+		// });
+		// System.out.println("--------------------");
 
 		printCar(cars,
 				// 인터페이스 CheckCar의 test메소드에 대응하는 람다를 만듭니다.
 				(Car car) -> {
-					return car.capacity >= 4 && car.price < 2500;
+					return car.capacity >= 2 && car.price < 4500;
 				});
 
-	}
-
-	public static void printCheeperThan(List<Car> cars, int price) {
-		for (Car car : cars) {
-			if (car.price < price) {
-				System.out.println(car);
-			}
-		}
 	}
 
 	// 람다식에서 사용하기 위하여 인터페이스를 정의
@@ -60,11 +52,19 @@ public class CarExam {
 		}
 	}
 
-	static class CheckCarForBigAndNotExpensive implements CheckCar {
-		@Override
-		public boolean test(Car car) {
-			return car.capacity >= 4 && car.price < 2500;
-		}
-	}
+	// public static void printCheeperThan(List<Car> cars, int price) {
+	// for (Car car : cars) {
+	// if (car.price < price) {
+	// System.out.println(car);
+	// }
+	// }
+	// }
+	//
+	// static class CheckCarForBigAndNotExpensive implements CheckCar {
+	// @Override
+	// public boolean test(Car car) {
+	// return car.capacity >= 4 && car.price < 2500;
+	// }
+	// }
 
 }
