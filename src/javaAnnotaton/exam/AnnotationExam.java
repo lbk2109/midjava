@@ -14,6 +14,7 @@ public class AnnotationExam {
 		System.out.println("메소드 2 입니다.");
 	}
 
+	
 //	@RunTwice
 	public void method3() {
 		System.out.println("메소드 3 입니다.");
