@@ -8,7 +8,7 @@ public class AnnotationExam {
 	public void method1() {
 		System.out.println("메소드 1 입니다.");
 	}
-
+// clone&import&modify souce& addtoindex& commit&push
 	@RunTwice
 	public void method2() {
 		System.out.println("메소드 2 입니다.");
